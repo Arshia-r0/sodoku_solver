@@ -6,7 +6,7 @@ void printV(Arr2d v) {
     for(const auto& i : v) {
         for(const auto& j : i) {
             if(j < 0) {
-                std::cout << rang::fg::red << abs(j) << rang::fg::reset << " ";
+                std::cout << rang::fg::red << -j << rang::fg::reset << " ";
             } else {
                 std::cout << j << " ";
             }
