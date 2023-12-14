@@ -12,7 +12,7 @@ bool Sodoku::checkSolutionExists() {
     return solvable;
 }
 
-int Sodoku::cellNum(const std::size_t& i, const std::size_t& j) const { return (i/3)*3 + (j/3); }
+std::size_t Sodoku::cellNum(const std::size_t& i, const std::size_t& j) const { return (i/3)*3 + (j/3); }
 
 Arr2d Sodoku::getAnswer() const { return Answer; }
 
@@ -36,7 +36,7 @@ bool Sodoku::solve(std::size_t r, std::size_t c) {
     auto flag = rowSet[r] | colSet[c] | cellSet[cellNum(r, c)];
     for(std::size_t h = 0; h < 9; h++) {
         if(!flag[h]) {
-            Answer[r][c] = -(h+1);
+            Answer[r][c] = -static_cast<int>(h+1);
             rowSet[r].set(h);
             colSet[c].set(h);
             cellSet[cellNum(r, c)].set(h);

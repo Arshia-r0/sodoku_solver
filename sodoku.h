@@ -14,11 +14,11 @@ private:
     Bitset2d colSet{};
     Bitset2d cellSet{};
     bool tried = false;
-    bool solvable;
+    bool solvable = false;
 
     void setInitialFlags();
     bool solve(std::size_t r = 0, std::size_t c = 0);
-    int cellNum(const std::size_t& i, const std::size_t& j) const;
+    std::size_t cellNum(const std::size_t& i, const std::size_t& j) const;
 
 public:
 
